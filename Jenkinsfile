@@ -30,7 +30,7 @@ pipeline {
                 echo 'Pushing Docker image...'
                 bat 'docker build -t eltitans/pipelinejk:latest .'
                     withDockerRegistry([ credentialsId: "docker-hub", url: "" ]) {
-                    bat "docker push eltitans/pipelinejk:build"
+                    bat "docker push eltitans/pipelinejk:latest"
                     }
             }
         }
