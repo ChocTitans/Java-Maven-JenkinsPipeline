@@ -3,21 +3,21 @@
   <groupId>org.example</groupId>
   <artifactId>JavaMavenKenkins</artifactId>
   <versioning>
-    <lastUpdated>20230126190222</lastUpdated>
+    <lastUpdated>20230126190333</lastUpdated>
     <snapshot>
-      <timestamp>20230126.190222</timestamp>
-      <buildNumber>4</buildNumber>
+      <timestamp>20230126.190333</timestamp>
+      <buildNumber>5</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>1.0-20230126.190222-4</value>
-        <updated>20230126190222</updated>
+        <value>1.0-20230126.190333-5</value>
+        <updated>20230126190333</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.0-20230126.190222-4</value>
-        <updated>20230126190222</updated>
+        <value>1.0-20230126.190333-5</value>
+        <updated>20230126190333</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>

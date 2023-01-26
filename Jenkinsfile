@@ -28,8 +28,7 @@ pipeline {
         stage('Docker Push') {
             steps {
                 echo 'Pushing Docker image...'
-                bat '''export BUILD_NUMBER=$build_number
-                     docker build -t pipelinejk:$build_number .'''
+                bat 'docker build -t pipelinejk .'
                 bat 'docker push pipelinejk'
             }
         }
