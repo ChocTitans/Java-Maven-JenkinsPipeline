@@ -23,7 +23,7 @@
        <repository>
          <id>internal.repo</id>
          <name>Internal repo</name>
-         <url>file:///C:\Users\Sampc\Desktop\Project\JavaMavenJKPipeline\Deploy</url>
+         <url>file:///C:\Users\Sampc\Desktop\Project\JavaMavenJKPipeline</url>
        </repository>
    </distributionManagement>
 
