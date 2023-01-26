@@ -29,8 +29,9 @@ pipeline {
             steps {
                 echo 'Pushing Docker image...'
                 bat 'docker build -t pipelinejk .'
-                withDockerRegistry([ credentialsId: "docker-hub", url: "" ]) {
-                bat "docker push eltitans/pipelinejk:build"
+                    withDockerRegistry([ credentialsId: "docker-hub", url: "" ]) {
+                    bat "docker push eltitans/pipelinejk:build"
+                    }
             }
         }
     }
