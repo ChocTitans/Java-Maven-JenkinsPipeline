@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Git') {
             steps {
-                echo 'Checking out code from Git..'
+                echo 'Checking out code from Git.'
                 git url: 'https://github.com/ChocTitans/Java-Maven-JenkinsPipeline.git'
             }
         }
