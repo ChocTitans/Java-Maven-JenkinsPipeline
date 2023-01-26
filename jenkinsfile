@@ -4,7 +4,7 @@ pipeline {
         stage('Git') {
             steps {
                 echo 'Checking out code from Git...'
-                git url: 'https://github.com/user/repo.git'
+                git url: 'https://github.com/ChocTitans/Java-Maven-JenkinsPipeline.git'
             }
         }
         stage('Build') {
@@ -28,8 +28,8 @@ pipeline {
         stage('Docker Push') {
             steps {
                 echo 'Pushing Docker image...'
-                sh 'docker build -t myimage:$BUILD_NUMBER .'
-                sh 'docker push myimage:$BUILD_NUMBER'
+                sh 'docker build -t mavenpipeline:$BUILD_NUMBER .'
+                sh 'docker push mavenpipeline:$BUILD_NUMBER'
             }
         }
     }
