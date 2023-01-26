@@ -28,7 +28,7 @@ pipeline {
         stage('Docker Push') {
             steps {
                 echo 'Pushing Docker image...'
-                bat 'docker build -t pipelinejk .'
+                bat 'docker build -t eltitans/pipelinejk:latest .'
                     withDockerRegistry([ credentialsId: "docker-hub", url: "" ]) {
                     bat "docker push eltitans/pipelinejk:build"
                     }
