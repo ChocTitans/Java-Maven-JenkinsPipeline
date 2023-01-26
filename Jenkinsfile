@@ -28,8 +28,8 @@ pipeline {
         stage('Docker Push') {
             steps {
                 echo 'Pushing Docker image...'
-                bat 'docker build -t ${NAME} .'
-                bat 'docker push ${NAME}'
+                bat 'docker build -t ${name} .'
+                bat 'docker push ${name}'
             }
         }
     }
