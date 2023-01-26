@@ -28,8 +28,8 @@ pipeline {
         stage('Docker Push') {
             steps {
                 echo 'Pushing Docker image...'
-                bat 'docker build -t mavenpipeline:$BUILD_NUMBER .'
-                bat 'docker push mavenpipeline:$BUILD_NUMBER'
+                bat 'docker build -t ${NAME} .'
+                bat 'docker push ${NAME}'
             }
         }
     }
