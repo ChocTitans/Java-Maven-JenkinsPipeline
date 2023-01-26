@@ -10,26 +10,26 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing...'
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                sh 'mvn deploy'
+                bat 'mvn deploy'
             }
         }
         stage('Docker Push') {
             steps {
                 echo 'Pushing Docker image...'
-                sh 'docker build -t mavenpipeline:$BUILD_NUMBER .'
-                sh 'docker push mavenpipeline:$BUILD_NUMBER'
+                bat 'docker build -t mavenpipeline:$BUILD_NUMBER .'
+                bat 'docker push mavenpipeline:$BUILD_NUMBER'
             }
         }
     }
