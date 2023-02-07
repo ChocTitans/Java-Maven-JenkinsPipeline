@@ -10,25 +10,25 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                bat 'mvn clean install'
+                sh 'mvn clean install'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing...'
-                bat 'mvn test'
+                sg 'mvn test'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                bat 'mvn deploy'
+                sh 'mvn deploy'
             }
         }
         stage('Docker Push') {
             steps {
                 echo 'Pushing Docker image...'
-                bat 'docker build -t eltitans/pipelinejk:latest .'
+                sh 'docker build -t eltitans/pipelinejk:latest .'
                     withDockerRegistry([ credentialsId: "docker-hub", url: "" ]) {
                     bat "docker push eltitans/pipelinejk:latest"
                     }
