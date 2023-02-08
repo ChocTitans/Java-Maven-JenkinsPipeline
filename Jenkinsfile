@@ -16,7 +16,7 @@ pipeline {
         stage('Setup Environment - Ansible') {
             steps {
                 echo 'Setuping...'
-                ansiblePlaybook credentialsId: 'devops', disableHostKeyChecking: true, installation: 'AnsibleAzure', inventory: 'Ansible/hosts.cfg', playbook: 'Ansible/Ansible-playbook.yml'
+                ansiblePlaybook credentialsId: 'devops', disableHostKeyChecking: true, installation: 'AnsibleAzure', inventory: 'hosts.cfg', playbook: 'Ansible-playbook.yml'
             }
         }
         stage('Test') {
