@@ -4,7 +4,7 @@ pipeline {
         stage('Git') {
             steps {
                 echo 'Checking out code from Git.'
-				checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'githubid', url: 'https://github.com/ChocTitans/Java-Maven-JenkinsPipeline.git']]])	
+				checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GithubHamza', url: 'https://github.com/ChocTitans/Java-Maven-JenkinsPipeline.git']]])	
             }
         }
         stage('Build') {
@@ -16,7 +16,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing...'
-                sg 'mvn test'
+                sh 'mvn test'
             }
         }
         stage('Deploy') {
@@ -29,8 +29,8 @@ pipeline {
             steps {
                 echo 'Pushing Docker image...'
                 sh 'docker build -t eltitans/pipelinejk:latest .'
-                    withDockerRegistry([ credentialsId: "docker-hub", url: "" ]) {
-                    bat "docker push eltitans/pipelinejk:latest"
+                    withDockerRegistry([ credentialsId: "DockerHamza", url: "" ]) {
+                    sh "docker push eltitans/pipelinejk:latest"
                     }
             }
         }
