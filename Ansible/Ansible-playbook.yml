@@ -1,0 +1,16 @@
+---
+- name: Install Maven and Java on Azure VM
+  hosts: hosts
+  become: yes
+
+  tasks:
+  - name: Install Maven
+    package:
+      name: maven
+      state: present
+      version: 3.9.0
+
+  - name: Install Java JDK 17
+    package:
+      name: openjdk-17-jdk
+      state: present
