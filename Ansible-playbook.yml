@@ -9,8 +9,12 @@
       name: maven
       state: present
       version: 3.9.0
+      update_cache: 'yes'
+
 
   - name: Install Java JDK 17
     apt:
       name: openjdk-17-jdk
       state: present
+      update_cache: 'yes'
+
