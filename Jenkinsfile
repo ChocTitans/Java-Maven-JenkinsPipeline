@@ -16,7 +16,7 @@ pipeline {
         stage('Setup Environment - Ansible') {
             steps {
                 echo 'Setuping...'
-                sh 'ansible-playbook -i C:\Users\Sampc\Desktop\Project\JavaMavenJKPipeline\Ansible Ansible-playbook.yml'
+                sh 'ansible-playbook -i C:/Users/Sampc/Desktop/Project/JavaMavenJKPipeline/Ansible Ansible-playbook.yml'
             }        
         stage('Test') {
             steps {
