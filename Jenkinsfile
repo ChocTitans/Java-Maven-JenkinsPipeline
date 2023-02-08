@@ -16,7 +16,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing...'
-                sg 'mvn test'
+                sh 'mvn test'
             }
         }
         stage('Deploy') {
@@ -29,7 +29,7 @@ pipeline {
             steps {
                 echo 'Pushing Docker image...'
                 sh 'docker build -t eltitans/pipelinejk:latest .'
-                    withDockerRegistry([ credentialsId: "docker-hub", url: "" ]) {
+                    withDockerRegistry([ credentialsId: "DockerHamza", url: "" ]) {
                     bat "docker push eltitans/pipelinejk:latest"
                     }
             }
