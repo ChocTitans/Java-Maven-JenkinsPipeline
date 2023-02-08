@@ -5,12 +5,12 @@
 
   tasks:
   - name: Install Maven
-    package:
+    apt:
       name: maven
       state: present
       version: 3.9.0
 
   - name: Install Java JDK 17
-    package:
+    apt:
       name: openjdk-17-jdk
       state: present
