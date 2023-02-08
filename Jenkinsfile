@@ -16,8 +16,7 @@ pipeline {
         stage('Setup Environment - Ansible') {
             steps {
                 echo 'Setuping...'
-                sh 'ansible-playbook -i C:/Users/Sampc/Desktop/Project/JavaMavenJKPipeline/Ansible Ansible-playbook.yml'
-            }
+                ansiblePlaybook credentialsId: 'devops', disableHostKeyChecking: true, inventory: 'Ansible/hosts.cfg', playbook: 'Ansible/Ansible-playbook.yml'            }
         }
         stage('Test') {
             steps {
