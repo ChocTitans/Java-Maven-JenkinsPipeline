@@ -37,7 +37,7 @@ pipeline {
                 sh 'docker build -t eltitans/pipelinejk:latest .'
                     withDockerRegistry([ credentialsId: "DockerHamza", url: "" ]) {
                     sh "docker push eltitans/pipelinejk:latest"
-                    }
+               }
             }
         }
     }
