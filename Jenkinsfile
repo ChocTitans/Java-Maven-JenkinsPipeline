@@ -4,7 +4,7 @@ pipeline {
         stage('Git') {
             steps {
                 echo 'Checking out code from Git.'
-				checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GithubHamza', url: 'https://github.com/ChocTitans/Java-Maven-JenkinsPipeline.git']]])	
+				checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'SSH_Github_Azure', url: 'git@github.com:ChocTitans/Java-Maven-JenkinsPipeline.git']]])	
             }
         }
         stage('Build') {
