@@ -4,8 +4,6 @@
   become: yes
 
   tasks:
-  - name: Install php
-    apt:
-      name: php
-      state: present
-      update_cache: 'yes'
+  - shell: echo 'test'
+    register: foo
+  - debug: msg="the echo was {{ foo.stdout }}"
