@@ -16,7 +16,7 @@ pipeline {
         stage('Setup Environment - Ansible') {
             steps {
                 echo 'Setuping....'
-                ansiblePlaybook credentialsId: 'azureuser2_testVM_Java', disableHostKeyChecking: true, installation: 'AnsibleAzure', inventory: 'hosts.cfg', playbook: 'Ansible-playbook.yml'
+                ansiblePlaybook credentialsId: 'ansible_ssh', disableHostKeyChecking: true, installation: 'AnsibleAzure', inventory: 'hosts.cfg', playbook: 'Ansible-playbook.yml'
             }
         }
         stage('Test') {
